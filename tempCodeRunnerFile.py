@@ -1,1 +1,0 @@
-ook_author = list(popular['Book-Author'].values),
