@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Book Recommender System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Recommendations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Book Recommendations AI</h1>
+    <p>Enter the book name which you like to read this AI will recommend you top 5 similar books which you can also like.</p>
+    <form class="mb-4" action="/function" method="post">
+        <div class="form-group">
+            <input type="text" class="form-control" id="bookName" name="user_input" placeholder="Enter a book name...">
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Get Recommendations</button>
+    </form>
+    
+    <div class="row">
+        {% if data %}
+    {% for i in data %}
+    <!-- Example of a recommended book card -->
+    <div class="col-md-3 mb-4">
+        <div class="card">
+            <img src="{{ i[2] }}" class="card-img-top" alt="Recommended Book Title">
+            <div class="card-body">
+                <h5 class="card-title">{{ i[0] }}</h5>
+                <p class="card-text">{{ i[1] }}</p>
+                <a href="/book/{{ i[0] }}" class="btn btn-primary">View Details</a>
+                <!-- <p class="card-text">Rating: 4.8</p> -->
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+{% endif %}
+
+{% if data == 0 %}
+<p style="color: red;">No such book name found in the database</p>
+{% endif %}
+
+        <!-- Repeat the above block for each recommended book -->
+        
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

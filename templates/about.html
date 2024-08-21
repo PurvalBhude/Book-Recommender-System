@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About This Project & Me</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Book Recommender System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/recommend">Recommendations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">About This Project & Me</h1>
+
+<!-- About the Project -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h3>About The Project</h3>
+        <p>This project is a book recommender system designed to help users find books they might enjoy based on their preferences. It uses machine learning algorithms to analyze user input and suggest similar books. The project is implemented using Python, Flask for backend logic, and Bootstrap for the frontend styling.</p>
+        
+        <p>Features of this project include:</p>
+        <ul>
+            <li>Displaying the top 50 highest-rated books.</li>
+            <li>Providing personalized book recommendations based on a user's input.</li>
+            <li>An intuitive, responsive interface designed with Bootstrap.</li>
+        </ul>
+        
+        <h4>Popularity Based Recommender System</h4>
+        <p>This system recommends books based on their popularity, considering the following conditions:</p>
+        <ul>
+            <li>Books must have at least 250 ratings.</li>
+            <li>Books are selected based on the highest average rating.</li>
+            <li>The system displays the top 50 books that meet these criteria.</li>
+        </ul>
+
+        <h4>Recommender System</h4>
+        <p>This system provides personalized recommendations based on collaborative filtering, with the following conditions:</p>
+        <ul>
+            <li>Only users who have rated more than 150 books are considered.</li>
+            <li>Only books that have been rated by more than 25 people are included.</li>
+            <li>Collaborative filtering algorithms are used to generate recommendations.</li>
+        </ul>
+    </div>
+</div>
+
+    <!-- About Me -->
+    <div class="row">
+        <div class="col-md-4">
+            <img src="static\images\purval.jpg" class="img-fluid rounded-circle mb-3" alt="Purval Madhukar Bhude">
+        </div>
+        <div class="col-md-8">
+            <h3>About Me</h3>
+            <p>My name is Purval Madhukar Bhude, and I am currently pursuing a B.Tech in Computer Science and Engineering at IIIT Sricity. I have a strong interest in machine learning, web development, and data science, with experience in building various projects in these domains.</p>
+            <p>Here are some ways you can connect with me:</p>
+            <ul>
+                <li><strong>Portfolio:</strong> <a href="https://purvalbhude.github.io/Portfolio-Website/" target="_blank">https://purvalbhude.github.io/Portfolio-Website/</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/PurvalBhude" target="_blank">https://github.com/PurvalBhude</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/purvalbhude" target="_blank">https://www.linkedin.com/in/purvalbhude</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

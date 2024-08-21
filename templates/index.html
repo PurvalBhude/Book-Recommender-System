@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 50 Highest-Rated Books</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Book Recommender System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/recommend">Recommendations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Top 50 Highest-Rated Books</h1>
+    <div class="row">
+        <!-- Example of a book card with a carousel -->
+        {% for i in range(book_name|length)%}
+        <div class="col-md-3 mb-4">
+            <div class="card">
+                <div id="bookCarousel{{ i }}" class="carousel slide" data-bs-interval="false">
+                    <div class="carousel-inner">
+                        <!-- First image (active) -->
+                        <div class="carousel-item active">
+                            <img src="{{ image[i] }}" class="d-block w-100" alt="Book Title Image 1">
+                        </div>
+                        <!-- Second image -->
+                        <div class="carousel-item">
+                            <img src="{{ image1[i] }}" class="d-block w-100" alt="Book Title Image 2">
+                        </div>
+                        <!-- Third image -->
+                        <div class="carousel-item">
+                            <img src="{{ image2[i] }}" class="d-block w-100" alt="Book Title Image 3">
+                        </div>
+                    </div>
+                    <!-- Carousel controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel{{ i }}" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel{{ i }}" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ book_name[i] }}</h5>
+                    <p class="card-text">{{ book_author[i] }}</p>
+                    <p class="card-text">Rating: {{ avg_rating[i] }}</p>
+                    <p class="card-text">No. of Rating: {{ num_rating[i] }}</p>
+                    <a href="/book/{{ book_name[i] }}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- Repeat the above block for each of the top 50 books -->
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
